@@ -1,4 +1,4 @@
-symfony-sandbox
+Solr test Application
 ===============
 
-Symfony2 Sandbox
+Integrate solr with Symfony2
