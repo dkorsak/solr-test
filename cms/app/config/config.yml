@@ -331,3 +331,13 @@ services:
     session.handler.pdo:
         class:     Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler
         arguments: [@pdo, %pdo.db_options%]
+
+
+fs_solr:
+    solr:
+        hostname: localhost
+        port: 8082
+        path:
+            core0: /solr/solr-test
+    auto_index: true #|false
+    entity_manager: default         

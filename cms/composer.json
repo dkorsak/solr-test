@@ -46,7 +46,8 @@
         "stealth35/apc-profiler-bundle": "*",
         "vich/uploader-bundle": "dev-master",
         "knplabs/knp-gaufrette-bundle" : "dev-master",
-        "liip/imagine-bundle": "dev-master"
+        "liip/imagine-bundle": "dev-master",
+        "floriansemm/solr-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

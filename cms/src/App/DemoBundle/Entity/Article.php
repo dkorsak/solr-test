@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use FS\SolrBundle\Doctrine\Annotation as Solr;
 
 /**
  * App\DemoBundle\Entity\Article
@@ -15,6 +16,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  * @ORM\Table(name="demo_article")
  * @ORM\Entity()
  * @Vich\Uploadable
+ * @Solr\Document()
  */
 class Article
 {
@@ -26,6 +28,7 @@ class Article
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Solr\Id
      */
     protected $id;
 
@@ -33,6 +36,7 @@ class Article
      * @var string
      * 
      * @ORM\Column(name="title", type="string", length=255, nullable=false)
+     * @Solr\Field(type="string")
      * @Assert\NotBlank()
      */
     protected $title;
@@ -41,6 +45,7 @@ class Article
      * @var string
      * 
      * @ORM\Column(name="body", type="text", nullable=false)
+     * @Solr\Field(type="string")
      * @Assert\NotBlank()
      */
     protected $body;

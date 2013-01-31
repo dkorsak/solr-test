@@ -6,12 +6,14 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
+use FS\SolrBundle\Doctrine\Annotation as Solr;
 
 /**
  * App\DemoBundle\Entity\ArticleCategory
  *
  * @ORM\Table(name="demo_article_category")
  * @ORM\Entity()
+ * @Solr\Document()
  */
 class ArticleCategory
 {
@@ -21,6 +23,7 @@ class ArticleCategory
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Solr\Id
      */
     protected $id;
 
@@ -28,6 +31,7 @@ class ArticleCategory
      * @var string
      * 
      * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     * @Solr\Field(type="string")
      * @Assert\NotBlank()
      */
     protected $name;
